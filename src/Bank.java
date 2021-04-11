@@ -1,6 +1,6 @@
 public class Bank {
 
-    int Saldo = 65;
+    int Saldo = 0;
 
     public void Deposit(int DepositValue) {
         if(DepositValue > 0) {
