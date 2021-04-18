@@ -1,22 +1,33 @@
 package main;
 
-import app.AccountRepository;
-import app.BankService;
+import app.Account;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
-        AccountRepository repository = new AccountRepository();
-        //konto 1
-        //konto 2
+        List<Account> bankAccounts = new ArrayList<>();
 
-        // dodaj account 1
-        // dodaj account 2
+        Account account1 = new Account("Tomasz", "Bator", "1234", 100);
+        Account account2 = new Account("Tomasz", "Bator", "1239", 0);
+        account1.Deposit(459);
+        account1.Withdraw(128);
+        account1.Transfer(account2, 500);
 
-        BankService bank = new BankService(repository);
-        bank.deposit(20);
-        bank.deposit(55);
-        bank.withdraw(70);
-        bank.getBalance();
+
+
+        bankAccounts.add(new Account("Tomasz", "Bator", "1234", 0));
+        bankAccounts.add(new Account("Tomasz", "Kowalski", "1934", 100));
+
+        bankAccounts.add(account1);
+
+
+
+
+
+
+
     }
 }
