@@ -2,26 +2,40 @@ package main;
 
 import app.Account;
 
+import app.AccountRepository;
+import app.AccountService;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
-        List<Account> bankAccounts = new ArrayList<>();
+        AccountRepository repository = new AccountRepository();
 
-        Account account1 = new Account("Tomasz", "Bator", "1234", 100);
-        Account account2 = new Account("Tomasz", "Bator", "1239", 0);
-        account1.Deposit(459);
-        account1.Withdraw(128);
-        account1.Transfer(account2, 500);
+        repository.addAccount(new Account("Tomasz", "Bator", "1234", 0));
+        repository.addAccount(new Account("Tomasz", "Kowalski", "1934", 100));
+
+        AccountService service = new AccountService(repository);
+
+//        Account account = bankAccounts.stream()
+//            .filter(bankAccount -> bankAccount.getAccountNumber().equals("1234"))
+//            .findFirst()
+//            .get();
+//
+//        for(Account acc: bankAccounts) {
+//            if(acc.getAccountNumber().equals("1234")) {
+//                System.out.println();
+//            }
+//        }
 
 
 
-        bankAccounts.add(new Account("Tomasz", "Bator", "1234", 0));
-        bankAccounts.add(new Account("Tomasz", "Kowalski", "1934", 100));
+//        Account account1 = new Account("Tomasz", "Bator", "1234", 100);
+//        Account account2 = new Account("Tomasz", "Bator", "1239", 0);
+//        account1.deposit(459);
+//        account1.withdraw(128);
+//        account1.transfer(account2, 500);
 
-        bankAccounts.add(account1);
 
 
 
