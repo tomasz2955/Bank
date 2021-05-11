@@ -15,6 +15,7 @@ public class Account {
   }
 
   public void deposit(double cash) {
+    //ZYCIE NIE JEST KOLOROWE :)
     this.balance += cash;
     System.out.println("You have deposited " + cash + " PLN. Your account balance is " + this.balance + "PLN.");
   }

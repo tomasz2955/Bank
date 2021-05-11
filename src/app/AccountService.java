@@ -18,7 +18,7 @@ public class AccountService {
   }
 
   public void transfer(String accNum1, String accNum2, double value) {
-
+    //ZLOSLIWY KOMENTARZ
   }
 
 }
