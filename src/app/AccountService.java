@@ -2,23 +2,27 @@ package app;
 
 public class AccountService {
 
-  private AccountRepository repository;
+    private AccountRepository repository;
+    public AccountService(AccountRepository repository) {
 
-  public AccountService(AccountRepository repository) {
-    this.repository = repository;
-  }
+        this.repository = repository;
+    }
 
-  public void deposit(String accountNumber, double value) {
-    Account account = repository.getAccountByAccountNumber(accountNumber);
-    account.deposit(value);
-  }
+    public AccountService() {
 
-  public void withdraw(String accountNumber, double value) {
-    //TODO sprawdzic czy mozesz tyle wypłacić
-  }
+    }
+
+    public void deposit(String name, double value) {
+        Account account = repository.queryAccount(name);
+        account.deposit(value);
+    }
+
+
+
+
 
   public void transfer(String accNum1, String accNum2, double value) {
-    //ZLOSLIWY KOMENTARZ
+
   }
 
 }
